@@ -6,9 +6,13 @@
 				`https://api.github.com/repos/GilgameshxZero/s/issues/${
 					window.location.pathname.split(`/`)[1]
 				}`
-			).then((res) => {
-				console.log(res);
-			});
+			)
+				.then((res) => {
+					return res.text();
+				})
+				.then((text) => {
+					window.location.replace(JSON.parse(text).title);
+				});
 		</script>
 	</head>
 	<body></body>
