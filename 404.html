@@ -11,7 +11,10 @@
 					return res.text();
 				})
 				.then((text) => {
-					window.location.replace(JSON.parse(text).title);
+					const link = document.createElement(`a`);
+					link.setAttribute(`rel`, `noreferrer`);
+					link.setAttribute(`href`, JSON.parse(text).title);
+					link.click();
 				});
 		</script>
 	</head>
